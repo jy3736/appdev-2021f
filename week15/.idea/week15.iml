@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/mqtt_client_utf8/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/mqtt_client_utf8/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/mqtt_client_utf8/build" />
+      <excludeFolder url="file://$MODULE_DIR$/firebase/build" />
+      <excludeFolder url="file://$MODULE_DIR$/firebase/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/firebase/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/realtime_chart_1/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/realtime_chart_1/build" />
+      <excludeFolder url="file://$MODULE_DIR$/realtime_chart_1/.pub" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
