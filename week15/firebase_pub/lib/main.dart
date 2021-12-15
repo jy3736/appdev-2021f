@@ -56,7 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     chartData = getChartData();
-    Timer.periodic(const Duration(milliseconds: 200), updateDataSource);
+    Timer.periodic(const Duration(milliseconds: 1000), updateDataSource);
     super.initState();
   }
 
@@ -151,22 +151,24 @@ class _MyHomePageState extends State<MyHomePage> {
 
   int _clk = 0;
   CoffeeRoasting tempK1 = CoffeeRoasting();
-  double k1 = 210;
-  double k2 = 0;
+  num k1 = 210;
+  num k2 = 210;
 
-  Future<void> updateDataSource(Timer timer) async {
-    final fbRef = database.ref('roaster1');
+  void updateDataSource(Timer timer) async {
+    final fbRef = database.ref('roasterRT');
     k1 = tempK1.next();
     k2 = k1 + 15 + Random().nextInt(5);
     fbRef.set({
-      'K1': k1.toStringAsFixed(1).toString(),
-      'K2': k2.toStringAsFixed(1).toString(),
+      'Time': _clk,
+      'k1': num.parse(k1.toStringAsFixed(1)),
+      'k2': num.parse(k2.toStringAsFixed(1)),
     });
     var ds = await fbRef.get();
     Map dat = ds.value as Map;
-    double fbk2 = double.parse(dat['K2']);
-    double fbK1 = double.parse(dat['K1']);
-    setState(() => chartData.add(LiveData(_clk, fbK1, fbk2)));
+    int fbTime = dat['Time'];
+    num fbk2 = dat['k2'];
+    num fbK1 = dat['k1'];
+    setState(() => chartData.add(LiveData(fbTime, fbK1, fbk2)));
     _clk += tempK1.rate;
     if (_clk > 20 * 60) chartData.removeAt(0);
     _chartController.updateDataSource(
@@ -187,13 +189,13 @@ class LiveData {
 }
 
 class CoffeeRoasting {
-  double k1 = 210;
-  double kt = 210;
+  num k1 = 210;
+  num kt = 210;
   int step = 90;
   int state = 0;
-  int rate = 10;
+  int rate = 5;
 
-  List<List<double>> ns = [
+  List<List<num>> ns = [
     [210, 30],
     [90, 90],
     [92, 30],
@@ -206,7 +208,7 @@ class CoffeeRoasting {
     [220, 180],
   ];
 
-  double next() {
+  num next() {
     if (k1 == kt) {
       kt = ns[state][0];
       step = ns[state++][1] ~/ rate;
