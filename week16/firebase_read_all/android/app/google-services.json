@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "468897599851",
+    "firebase_url": "https://coffee-roaster-7b60c-default-rtdb.firebaseio.com",
+    "project_id": "coffee-roaster-7b60c",
+    "storage_bucket": "coffee-roaster-7b60c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:468897599851:android:f2b57e194cec0abbc67c2e",
+        "android_client_info": {
+          "package_name": "com.example.firebase_pub"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "468897599851-aq8d0qjgctuhsan0ohnn1jki5r9akqv8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBeuZ6gWp215_x2fr75Iclv_D7YT0hqcfE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "468897599851-aq8d0qjgctuhsan0ohnn1jki5r9akqv8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:468897599851:android:527952f38a375949c67c2e",
+        "android_client_info": {
+          "package_name": "com.example.realtime_chart"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "468897599851-aq8d0qjgctuhsan0ohnn1jki5r9akqv8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBeuZ6gWp215_x2fr75Iclv_D7YT0hqcfE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "468897599851-aq8d0qjgctuhsan0ohnn1jki5r9akqv8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
