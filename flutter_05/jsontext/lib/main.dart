@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -73,16 +74,29 @@ class _MyHomePage extends State<MyHomePage> {
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           const SizedBox(height: 15),
-          Card(
-            child: Padding(
-              padding: const EdgeInsets.all(20),
-              child: Text(
-                info,
-                style: const TextStyle(fontSize: 20),
+          Expanded(flex:4,
+            child: Card(
+              child: Padding(
+                padding: const EdgeInsets.all(10),
+                child: SingleChildScrollView(
+                  child: Image.asset("images/"+photo[picked]!),
+                ),
               ),
             ),
           ),
-          Expanded(child: Container()),
+          Expanded( flex:5,
+            child: Card(
+              child: Padding(
+                padding: const EdgeInsets.all(10),
+                child: SingleChildScrollView(
+                  child: Text(
+                    info,
+                    style: const TextStyle(fontSize: 20),
+                  ),
+                ),
+              ),
+            ),
+          ),
           DropdownButton<String>(
             value: picked,
             icon: const Icon(Icons.arrow_downward),
@@ -97,7 +111,7 @@ class _MyHomePage extends State<MyHomePage> {
             onChanged: (v) {
               setState(() {
                 picked = v!;
-                info = description[v]!;
+                info = description[picked]!;
               });
             },
           ),
